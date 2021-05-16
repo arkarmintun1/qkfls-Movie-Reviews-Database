@@ -53,6 +53,7 @@ if (CLOUDANT_API && CLOUDANT_URL) {
   var Cloudant = require('@cloudant/cloudant');
   // use IAM here
   cloudant = Cloudant({ url: CLOUDANT_URL, plugins: { iamauth: { iamApiKey: CLOUDANT_API } } });
+  console.log({cloudant});
   // Create a new "moviesDb" database.
   cloudant.db.create(dbName, function (err, data) {
     if (!err) //err if database doesn't already exists
@@ -161,6 +162,7 @@ function checkServiceCredentials() {
   if (!cloudant || !moviesDb || !naturalLanguageUnderstanding) {
 
     if (!cloudant || !moviesDb) {
+    	console.log("checking:", cloudant, "moviesDB", moviesDb);
       errors.push(strings.CLOUDANT_PROBLEM);
     }
 
