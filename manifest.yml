@@ -1,6 +1,6 @@
 ---
 applications:
- - name: movies-reviews-database
+ - name: coursera-c3-cloudfondry
    random-route: false
    memory: 128M
    services:

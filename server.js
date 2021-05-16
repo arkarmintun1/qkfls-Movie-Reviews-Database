@@ -30,7 +30,7 @@ if (dotenv.error) {
     CLOUDANT_URL = cloudantCreds.url;
   }
   if (appEnv.services['natural-language-understanding']) {
-    nluCreds = appEnv.services['natural-language-understanding'][0].credentials;
+    const nluCreds = appEnv.services['natural-language-understanding'][0].credentials;
     NLU_APIKEY = nluCreds.apikey;
     NLU_URL = nluCreds.url;
   }
@@ -44,10 +44,10 @@ if (dotenv.error) {
 }
 
 // logging variables for debug purposes:
-// console.log(`NLU_APIKEY: ${NLU_APIKEY}`);
-// console.log(`NLU_URL: ${NLU_URL}`);
-// console.log(`CLOUDANT_API: ${CLOUDANT_API}`);
-// console.log(`CLOUDANT_URL: ${CLOUDANT_URL}`);
+ console.log(`NLU_APIKEY: ${NLU_APIKEY}`);
+ console.log(`NLU_URL: ${NLU_URL}`);
+ console.log(`CLOUDANT_API: ${CLOUDANT_API}`);
+ console.log(`CLOUDANT_URL: ${CLOUDANT_URL}`);
 
 if (CLOUDANT_API && CLOUDANT_URL) {
   var Cloudant = require('@cloudant/cloudant');
